@@ -1,0 +1,20 @@
+<h2>Let's play a new game...</h2>
+<br>
+<h3>This is your grid:</h3>
+<ul>
+  <% @grid.each do |letter| %>
+    <li><%= letter %></li>
+  <% end%>
+</ul>
+<br>
+<h3>Your word?</h3>
+<form action="/score" method="post">
+  <input type="text" placeholder="Type here!" name="answer">
+  <input type="submit" name="" id="">
+  <input type="hidden" name="start_time" value='<%= @start_time %>'>
+  <input type="hidden" name="grid" value='<%= @grid.join() %>'>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
+
+
+

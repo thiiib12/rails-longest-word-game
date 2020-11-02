@@ -1,0 +1,15 @@
+<h2>Results</h2>
+
+<% if @result[:message] == "1" %>
+  <p><strong>Congratulations!</strong> <%= @answer %> is a valid English word...</p>
+<% elsif  @result[:message] == "2"   %>
+  <p>Sorry but <strong><%= @answer.upcase %></strong> can't be built out of <%= @grid %></p>
+<% else %>
+  <p>Sorry but <strong><%= @answer.upcase %></strong> does not seem to be a valid English word...</p>
+<% end %>
+
+
+
+<h3>Your score is <%=  @result[:score].round(2) %></h3>
+
+<%= link_to "Play Again", new_path %>
